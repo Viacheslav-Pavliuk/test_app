@@ -18,7 +18,6 @@ class _MyPageState extends State<MyPage> {
   void changeColor() {
     setState(() {
       _color = Color.fromARGB(
-        //or with fromRGBO with fourth arg as _random.nextDouble(),
         _random.nextInt(256),
         _random.nextInt(256),
         _random.nextInt(256),
@@ -32,7 +31,6 @@ class _MyPageState extends State<MyPage> {
     return Scaffold(
       body: InkWell(
         onTap: changeColor,
-
         child: Container(
           child: SafeArea(
             child: Row(
@@ -41,37 +39,19 @@ class _MyPageState extends State<MyPage> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Text('Hey there'),
+                    Text('Hey there',
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.black87,
+                            fontFamily: 'Times new Roman')),
                   ],
                 )
               ],
-            ) ,
+            ),
           ),
           color: _color,
         ),
-        ),
-      );
-
+      ),
+    );
   }
 }
-/*
-return Scaffold(
-      body: InkWell(
-        onTap: changeColor,
-
-        child: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                children: const [
-                  Text('Hey there'),
-                ],
-              )
-            ]
-          )
-
-        ),
-        ),
-      );
- */
