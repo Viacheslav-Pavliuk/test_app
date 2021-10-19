@@ -29,6 +29,9 @@ class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Test application'),
+      ),
       body: InkWell(
         onTap: changeColor,
         child: Container(
